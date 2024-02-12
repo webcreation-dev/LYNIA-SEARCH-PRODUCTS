@@ -12,15 +12,18 @@ class ShopLivewireController extends Component
 {
     use WithPagination;
 
+    protected $paginationTheme = 'bootstrap';
+
     public string $searchBook = "";
 
     public function render()
     {
         $products = Product::with('images')
         ->when($this->searchBook !== '', fn(Builder $query) => $query->where('name', 'like', '%'. $this->searchBook .'%'))
-        ->paginate(10);
+        ->paginate(16);
+
         return view('livewire.shop-livewire-controller', [
-            'products' => $products
+            'products' => $products,
         ]);
 
     }
@@ -30,5 +33,6 @@ class ShopLivewireController extends Component
         if ($key === 'searchBook') {
             $this->resetPage();
         }
+
     }
 }

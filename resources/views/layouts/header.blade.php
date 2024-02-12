@@ -28,7 +28,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-3 col-md-4">
                     <div class="logo">
-                        <a href="index.html"><img src="assets/lynia.jpg" alt=""></a>
+                        <a href="index.html"><img src="{{asset('assets/lynia.jpg')}}" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-7 col-md-5">

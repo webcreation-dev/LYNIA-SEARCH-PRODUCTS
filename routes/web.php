@@ -18,6 +18,5 @@ Route::get('/', function () {
     return view('shop');
 });
 
-// Route::get('/show/books', LivewireShowBooks::class);
-
 Route::resource('products', ProductController::class);
+Route::get('/products_details/{productId}', [ProductController::class, 'details'])->name('products.details');

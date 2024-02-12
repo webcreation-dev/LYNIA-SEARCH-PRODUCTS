@@ -18,6 +18,12 @@ class ProductController extends Controller
         return view('shop', compact('products'));
     }
 
+    public function details($productId)
+    {
+        $product = Product::with('images')->find($productId);
+        return view('product_details', compact('product'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
